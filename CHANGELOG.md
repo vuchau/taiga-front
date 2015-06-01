@@ -5,6 +5,7 @@
 
 ### Features
 - Ability to create single-line or multi-line custom fields. (thanks to [@artlepool](https://github.com/artlepool))
+- Ability to choose a theme (thanks to [@astagi](https://github.com/astagi))
 
 ### Misc
 - Lots of small and not so small bugfixes.
