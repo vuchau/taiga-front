@@ -99,6 +99,21 @@
             transition: color .3s linear;
         }
     }
+    .task-attachments {
+        padding: .5rem .5rem 2rem;
+        position: relative;
+        width: 100%;
+        .attachment {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+        img {
+            cursor: pointer;
+            max-width: 100%;
+        }
+    }
 }
 
 

@@ -399,11 +399,24 @@ module.directive("tgKanbanArchivedStatusIntro", ["$translate", KanbanArchivedSta
 ## Kanban User Story Directive
 #############################################################################
 
-KanbanUserstoryDirective = ($rootscope) ->
+KanbanUserstoryDirective = ($rootscope, rs) ->
+    imageExtensions = ["jpg", "jpeg", "bmp", "gif", "png"]
+
+    getImages = (attachments) ->
+        return _.filter attachments, (attachment) ->
+            extension = attachment.attached_file.split('.').pop()
+
+            return imageExtensions.indexOf(extension) != -1
+
     link = ($scope, $el, $attrs, $model) ->
         $el.disableSelection()
 
         $scope.$watch "us", (us) ->
+            rs.attachments.list("attachments/us", us.id, us.project).then (attachments) =>
+                attachments = getImages(attachments)
+                $scope.attachments = _.sortBy(attachments, "order")
+                console.log $scope.attachments
+
             if us.is_blocked and not $el.hasClass("blocked")
                 $el.addClass("blocked")
             else if not us.is_blocked and $el.hasClass("blocked")
@@ -425,7 +438,32 @@ KanbanUserstoryDirective = ($rootscope) ->
         require: "ngModel"
     }
 
-module.directive("tgKanbanUserstory", ["$rootScope", KanbanUserstoryDirective])
+module.directive("tgKanbanUserstory", ["$rootScope", "$tgResources", KanbanUserstoryDirective])
+
+#############################################################################
+##
+#############################################################################
+
+TaskAttachmentDirective = () ->
+    link = ($scope, $el) ->
+        $el.on "click", ".attachment", () ->
+            currentActive = $el.find(".active")
+            currentActive.removeClass("active")
+            next = currentActive.next()
+
+            if !next.length
+                next = $el.find(".attachment:first")
+
+            next.addClass("active")
+
+        $scope.$on "$destroy", ->
+            $el.off()
+
+    return {
+        link: link
+    }
+
+module.directive("tgTaskAttachment", [TaskAttachmentDirective])
 
 #############################################################################
 ## Kanban Squish Column Directive
