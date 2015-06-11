@@ -91,6 +91,7 @@ urls = {
     # Issues
     "issues": "/issues"
     "bulk-create-issues": "/issues/bulk_create"
+    "issues-filters": "/issues/filters_data"
 
     # Wiki pages
     "wiki": "/wiki"
