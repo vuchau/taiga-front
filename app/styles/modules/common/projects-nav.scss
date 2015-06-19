@@ -82,7 +82,7 @@
         &.active,
         &:hover {
             background-color: $gray;
-            color: $green-taiga;
+            color: $primary;
             transition: background-color .3s linear;
             .icon {
                 opacity: 1;
@@ -113,7 +113,7 @@
     // @include transition (all 1s ease);
     @extend %background-taiga;
     // background-blend-mode: multiply;
-    // background-color: $green-taiga;
+    // background-color: $primary;
     bottom: 0;
     display: none;
     left: 0;
@@ -134,7 +134,7 @@
     }
     p {
         @extend %medium;
-        color: $fresh-taiga;
+        color: $primary-light;
         padding-top: 20px;
         text-align: center;
     }

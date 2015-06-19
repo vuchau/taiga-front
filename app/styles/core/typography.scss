@@ -53,7 +53,7 @@ h1 {
         max-width: 40%;
     }
     .green {
-        color: $green-taiga;
+        color: $primary;
     }
     .date {
         @include ellipsis(500px);
@@ -95,7 +95,7 @@ a:visited {
     color: $grayer;
     text-decoration: none;
     &:hover {
-        color: $green-taiga;
+        color: $primary;
         transition: color .3s linear;
     }
 }

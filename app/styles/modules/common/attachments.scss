@@ -23,7 +23,7 @@
         color: $grayer;
         cursor: pointer;
         &:hover {
-            color: $green-taiga;
+            color: $primary;
             transition: color .2s ease-in;
         }
     }
@@ -96,7 +96,7 @@
             display: block;
             position: absolute;
             &:hover {
-                color: $green-taiga;
+                color: $primary;
             }
         }
         .settings {
@@ -162,7 +162,7 @@
         color: $gray-light;
     }
     .more-attachments-num {
-        color: $green-taiga;
+        color: $primary;
         margin-left: .5rem;
     }
     &:hover {
