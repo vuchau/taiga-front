@@ -281,7 +281,7 @@
         text-align: center;
         transition: color .3s linear;
         &.active {
-            background: rgba($fresh-taiga, .9);
+            background: rgba($primary-light, .9);
             color: $whitish;
         }
         &:first-child {

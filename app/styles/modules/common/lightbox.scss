@@ -477,7 +477,7 @@
         position: relative;
         &:hover,
         &.active {
-            background: lighten($green-taiga, 55%);
+            background: lighten($primary, 55%);
             cursor: pointer;
         }
         &:hover {

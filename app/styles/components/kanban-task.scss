@@ -95,7 +95,7 @@
         position: absolute;
         transition: opacity .2s linear;
         &:hover {
-            color: darken($postit-hover, 15%);
+            color: darken($card-hover, 15%);
             transition: color .3s linear;
         }
     }
@@ -144,7 +144,7 @@
     }
     .task-points {
         @extend %small;
-        color: darken($postit-hover, 15%);
+        color: darken($card-hover, 15%);
         margin: 0;
         span {
             display: inline-block;

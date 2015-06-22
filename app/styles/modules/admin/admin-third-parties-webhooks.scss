@@ -102,7 +102,7 @@
         padding: .5rem;
         transition: background .2s linear;
         &:hover {
-            background: rgba($fresh-taiga, .1);
+            background: rgba($primary-light, .1);
             transition: background .2s linear;
         }
         &.history-single-open {

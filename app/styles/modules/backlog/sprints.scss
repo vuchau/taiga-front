@@ -158,7 +158,7 @@
                 height: 40px;
             }
             &.ui-sortable-helper {
-                background: lighten($green-taiga, 60%);
+                background: lighten($primary, 60%);
                 box-shadow: 1px 1px 10px rgba($black, .1);
                 transition: background .2s ease-in;
             }

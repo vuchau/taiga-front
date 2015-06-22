@@ -92,10 +92,8 @@ hr {
 // __Links__
 a,
 a:visited {
-    color: $grayer;
     text-decoration: none;
     &:hover {
-        color: $primary;
         transition: color .3s linear;
     }
 }

@@ -15,15 +15,6 @@ body {
     }
     &.loading-project {
         overflow: hidden;
-        .projects-nav-overlay {
-            opacity: 1;
-            overflow: hidden;
-            transition: opacity 1s ease;
-            div {
-                opacity: 1;
-                transition: opacity 1s ease;
-            }
-        }
     }
 }
 
