@@ -443,7 +443,7 @@ gulp.task("app-deploy", ["coffee", "conf", "locales", "app-loader"], function() 
 # Common tasks
 ##############################################################################
 */
-gulp.task("clear", function(done) {
+gulp.task("clear", ["clear-sass-cache"], function(done) {
   return cache.clearAll(done);
 });
 
