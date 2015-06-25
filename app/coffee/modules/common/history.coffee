@@ -136,15 +136,6 @@ HistoryDirective = ($log, $loading, $qqueue, $template, $confirm, $translate, $c
 
             return humanizedFieldNames[field] or field
 
-        getUserFullName = (userId) ->
-            return $scope.usersById[userId]?.full_name_display
-
-        getUserAvatar = (userId) ->
-            if $scope.usersById[userId]?
-                return $scope.usersById[userId].photo
-            else
-                return "/images/unnamed.png"
-
         countChanges = (comment) ->
             return _.keys(comment.values_diff).length
 
@@ -286,8 +277,9 @@ HistoryDirective = ($log, $loading, $qqueue, $template, $confirm, $translate, $c
                 return html[0].outerHTML
 
             html = templateActivity({
-                avatar: getUserAvatar(comment.user.pk)
+                avatar: comment.user.photo
                 userFullName: comment.user.name
+                userUsername: comment.user.username
                 creationDate: moment(comment.created_at).format(getPrettyDateFormat())
                 comment: comment.comment_html
                 changesText: renderChangesHelperText(comment)
@@ -305,8 +297,9 @@ HistoryDirective = ($log, $loading, $qqueue, $template, $confirm, $translate, $c
 
         renderChange = (change) ->
             return templateActivity({
-                avatar: getUserAvatar(change.user.pk)
-                userFullName: change.user.name
+                avatar: comment.user.photo
+                userFullName: comment.user.name
+                userUsername: comment.user.username
                 creationDate: moment(change.created_at).format(getPrettyDateFormat())
                 comment: change.comment_html
                 changes: renderChangeEntries(change)
